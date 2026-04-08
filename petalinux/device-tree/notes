@@ -1,0 +1,3 @@
+pcw.dtsi - components/plnx_workspace/device-tree/device-tree/pcw.dtsi
+zynq-7000.dtsi - components/plnx_workspace/device-tree/device-tree/zynq-7000.dtsi
+system-user.dtsi - project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
