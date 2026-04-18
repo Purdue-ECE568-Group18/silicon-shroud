@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="dma_sim_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_datamover_pkg" />
+            <top_module name="axi_dma_pkg" />
+            <top_module name="axi_vip_0_pkg" />
+            <top_module name="axi_vip_pkg" />
+            <top_module name="dma_sim_tb" />
+            <top_module name="glbl" />
+            <top_module name="std" />
+            <top_module name="vcomponents" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="100.400001 us"></ZoomEndTime>
+      <Cursor1Time time="5.630000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="112"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/axi_resetn">
+      <obj_property name="ElementShortName">axi_resetn</obj_property>
+      <obj_property name="ObjectShortName">axi_resetn</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group783">
+      <obj_property name="label">REGS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/axi_resetn">
+         <obj_property name="ElementShortName">axi_resetn</obj_property>
+         <obj_property name="ObjectShortName">axi_resetn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_awvalid">
+         <obj_property name="ElementShortName">s_axi_lite_awvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_awvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_awready">
+         <obj_property name="ElementShortName">s_axi_lite_awready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_awready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/s_axi_lite_awaddr">
+         <obj_property name="ElementShortName">s_axi_lite_awaddr[9:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_awaddr[9:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_wvalid">
+         <obj_property name="ElementShortName">s_axi_lite_wvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_wvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_wready">
+         <obj_property name="ElementShortName">s_axi_lite_wready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_wready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/s_axi_lite_wdata">
+         <obj_property name="ElementShortName">s_axi_lite_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/s_axi_lite_bresp">
+         <obj_property name="ElementShortName">s_axi_lite_bresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_bresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_bvalid">
+         <obj_property name="ElementShortName">s_axi_lite_bvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_bvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_bready">
+         <obj_property name="ElementShortName">s_axi_lite_bready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_bready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_arvalid">
+         <obj_property name="ElementShortName">s_axi_lite_arvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_arvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_arready">
+         <obj_property name="ElementShortName">s_axi_lite_arready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_arready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/s_axi_lite_araddr">
+         <obj_property name="ElementShortName">s_axi_lite_araddr[9:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_araddr[9:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_rvalid">
+         <obj_property name="ElementShortName">s_axi_lite_rvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_rvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axi_lite_rready">
+         <obj_property name="ElementShortName">s_axi_lite_rready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_rready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/s_axi_lite_rdata">
+         <obj_property name="ElementShortName">s_axi_lite_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_rdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/s_axi_lite_rresp">
+         <obj_property name="ElementShortName">s_axi_lite_rresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_lite_rresp[1:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group797">
+      <obj_property name="label">MM2S</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_araddr">
+         <obj_property name="ElementShortName">m_axi_mm2s_araddr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_araddr[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_arlen">
+         <obj_property name="ElementShortName">m_axi_mm2s_arlen[7:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_arlen[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_arsize">
+         <obj_property name="ElementShortName">m_axi_mm2s_arsize[2:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_arsize[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_arburst">
+         <obj_property name="ElementShortName">m_axi_mm2s_arburst[1:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_arburst[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_arprot">
+         <obj_property name="ElementShortName">m_axi_mm2s_arprot[2:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_arprot[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_arcache">
+         <obj_property name="ElementShortName">m_axi_mm2s_arcache[3:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_arcache[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_arvalid">
+         <obj_property name="ElementShortName">m_axi_mm2s_arvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_arvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_arready">
+         <obj_property name="ElementShortName">m_axi_mm2s_arready</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_arready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_rdata">
+         <obj_property name="ElementShortName">m_axi_mm2s_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_rdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_rresp">
+         <obj_property name="ElementShortName">m_axi_mm2s_rresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_rresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_rlast">
+         <obj_property name="ElementShortName">m_axi_mm2s_rlast</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_rlast</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_rvalid">
+         <obj_property name="ElementShortName">m_axi_mm2s_rvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_rvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_mm2s_rready">
+         <obj_property name="ElementShortName">m_axi_mm2s_rready</obj_property>
+         <obj_property name="ObjectShortName">m_axi_mm2s_rready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group935">
+      <obj_property name="label">MM2S Stream</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axis_mm2s_tdata">
+         <obj_property name="ElementShortName">m_axis_mm2s_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_mm2s_tdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axis_mm2s_tkeep">
+         <obj_property name="ElementShortName">m_axis_mm2s_tkeep[3:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_mm2s_tkeep[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axis_mm2s_tvalid">
+         <obj_property name="ElementShortName">m_axis_mm2s_tvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axis_mm2s_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axis_mm2s_tready">
+         <obj_property name="ElementShortName">m_axis_mm2s_tready</obj_property>
+         <obj_property name="ObjectShortName">m_axis_mm2s_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axis_mm2s_tlast">
+         <obj_property name="ElementShortName">m_axis_mm2s_tlast</obj_property>
+         <obj_property name="ObjectShortName">m_axis_mm2s_tlast</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group941">
+      <obj_property name="label">S2MM_Stream</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/s_axis_s2mm_tdata">
+         <obj_property name="ElementShortName">s_axis_s2mm_tdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_s2mm_tdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/s_axis_s2mm_tkeep">
+         <obj_property name="ElementShortName">s_axis_s2mm_tkeep[3:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axis_s2mm_tkeep[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axis_s2mm_tvalid">
+         <obj_property name="ElementShortName">s_axis_s2mm_tvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axis_s2mm_tvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axis_s2mm_tready">
+         <obj_property name="ElementShortName">s_axis_s2mm_tready</obj_property>
+         <obj_property name="ObjectShortName">s_axis_s2mm_tready</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/s_axis_s2mm_tlast">
+         <obj_property name="ElementShortName">s_axis_s2mm_tlast</obj_property>
+         <obj_property name="ObjectShortName">s_axis_s2mm_tlast</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group958">
+      <obj_property name="label">S2MM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_awaddr">
+         <obj_property name="ElementShortName">m_axi_s2mm_awaddr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_awaddr[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_awlen">
+         <obj_property name="ElementShortName">m_axi_s2mm_awlen[7:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_awlen[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_awsize">
+         <obj_property name="ElementShortName">m_axi_s2mm_awsize[2:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_awsize[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_awburst">
+         <obj_property name="ElementShortName">m_axi_s2mm_awburst[1:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_awburst[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_awprot">
+         <obj_property name="ElementShortName">m_axi_s2mm_awprot[2:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_awprot[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_awcache">
+         <obj_property name="ElementShortName">m_axi_s2mm_awcache[3:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_awcache[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_awvalid">
+         <obj_property name="ElementShortName">m_axi_s2mm_awvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_awvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_awready">
+         <obj_property name="ElementShortName">m_axi_s2mm_awready</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_awready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_wdata">
+         <obj_property name="ElementShortName">m_axi_s2mm_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_wstrb">
+         <obj_property name="ElementShortName">m_axi_s2mm_wstrb[3:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_wstrb[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_wlast">
+         <obj_property name="ElementShortName">m_axi_s2mm_wlast</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_wlast</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_wvalid">
+         <obj_property name="ElementShortName">m_axi_s2mm_wvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_wvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_wready">
+         <obj_property name="ElementShortName">m_axi_s2mm_wready</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_wready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_bresp">
+         <obj_property name="ElementShortName">m_axi_s2mm_bresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_bresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_bvalid">
+         <obj_property name="ElementShortName">m_axi_s2mm_bvalid</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_bvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/u_dma/m_axi_s2mm_bready">
+         <obj_property name="ElementShortName">m_axi_s2mm_bready</obj_property>
+         <obj_property name="ObjectShortName">m_axi_s2mm_bready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group985">
+      <obj_property name="label">DST_BRAM_AXI</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_aclk">
+         <obj_property name="ElementShortName">s_aclk</obj_property>
+         <obj_property name="ObjectShortName">s_aclk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_aresetn">
+         <obj_property name="ElementShortName">s_aresetn</obj_property>
+         <obj_property name="ObjectShortName">s_aresetn</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_awid">
+         <obj_property name="ElementShortName">s_axi_awid[0:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awid[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_awaddr">
+         <obj_property name="ElementShortName">s_axi_awaddr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awaddr[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_awlen">
+         <obj_property name="ElementShortName">s_axi_awlen[7:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awlen[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_awsize">
+         <obj_property name="ElementShortName">s_axi_awsize[2:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awsize[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_awburst">
+         <obj_property name="ElementShortName">s_axi_awburst[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awburst[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_awvalid">
+         <obj_property name="ElementShortName">s_axi_awvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_awready">
+         <obj_property name="ElementShortName">s_axi_awready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_wdata">
+         <obj_property name="ElementShortName">s_axi_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_wstrb">
+         <obj_property name="ElementShortName">s_axi_wstrb[3:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wstrb[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_wlast">
+         <obj_property name="ElementShortName">s_axi_wlast</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wlast</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_wvalid">
+         <obj_property name="ElementShortName">s_axi_wvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_wready">
+         <obj_property name="ElementShortName">s_axi_wready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_bid">
+         <obj_property name="ElementShortName">s_axi_bid[0:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bid[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_bresp">
+         <obj_property name="ElementShortName">s_axi_bresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_bvalid">
+         <obj_property name="ElementShortName">s_axi_bvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_bready">
+         <obj_property name="ElementShortName">s_axi_bready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_arid">
+         <obj_property name="ElementShortName">s_axi_arid[0:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arid[0:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_araddr">
+         <obj_property name="ElementShortName">s_axi_araddr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_araddr[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_arlen">
+         <obj_property name="ElementShortName">s_axi_arlen[7:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arlen[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_arsize">
+         <obj_property name="ElementShortName">s_axi_arsize[2:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arsize[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_arburst">
+         <obj_property name="ElementShortName">s_axi_arburst[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arburst[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_arvalid">
+         <obj_property name="ElementShortName">s_axi_arvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arvalid</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/dma_sim_tb/bram_b/s_axi_arready">
+         <obj_property name="ElementShortName">s_axi_arready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dma_sim_tb/bram_b/s_axi_rid">
+         <obj_property name="ElementShortName">s_axi_rid[0:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rid[0:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
