@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="71" Path="/home/jfrye/Documents/Graduate_School/ECE56800/FinalProject/04062026_clone/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.xpr">
+<Project Product="Vivado" Version="7" Minor="71" Path="./silicon_shroud_coraz7.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="77adfeb3d7554bc89cdcde07da70a9f8"/>
