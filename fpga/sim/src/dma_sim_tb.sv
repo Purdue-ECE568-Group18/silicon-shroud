@@ -234,6 +234,23 @@ module dma_sim_tb();
    assign s_axis_s2mm_tvalid = m_axis_mm2s_tvalid;
    assign s_axis_s2mm_tlast  = m_axis_mm2s_tlast;
    assign m_axis_mm2s_tready = s_axis_s2mm_tready;
+   
+    axis_padder upadder(
+    .aclk(clk          ),
+    .aresetn(resetn    ),
+    
+    // Slave Interface (from Ethernet/Network)
+    .s_axis_tdata(m_axis_mm2s_tdata ),
+    .s_axis_tvalid(m_axis_mm2s_tvalid),
+    .s_axis_tready(m_axis_mm2s_tready),
+    .s_axis_tlast(m_axis_mm2s_tlast),
+    
+    // Master Interface (to DMA)
+    .m_axis_tdata(s_axis_s2mm_tdata),
+    .m_axis_tvalid(s_axis_s2mm_tvalid),
+    .m_axis_tready(s_axis_s2mm_tready),
+    .m_axis_tlast(s_axis_s2mm_tlast)
+     );
            
   axi_dma_0 u_dma (
     .s_axi_lite_aclk     (clk          ),
