@@ -1,0 +1,36 @@
+FROM BRAVE AI
+
+To add udmabuf (u-dma-buf) to a PetaLinux project, you must integrate the kernel module source code and configure the device tree to define the DMA buffer properties. 
+
+1. Integrate the Kernel Module First, clone the official repository and create a PetaLinux module template. Replace the placeholder files with the source code from the repository. 
+
+# Clone the udmabuf repository
+git clone https://github.com/ikwzm/udmabuf
+
+# Create and enable the module in PetaLinux
+petalinux-create -t modules --name u-dma-buf --enable
+
+# Copy the source code into the PetaLinux recipe directory
+cp udmabuf/u-dma-buf.c project-spec/meta-user/recipes-modules/u-dma-buf/files/
+cp udmabuf/u-dma-buf-ioctl.h project-spec/meta-user/recipes-modules/u-dma-buf/files/
+
+2. Configure the Device Tree Edit the user-specific device tree file located at project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi to define the buffer size, name, and synchronization mode. The compatible string must be ikwzm,u-dma-buf. 
+
+/include/ "system-conf.dtsi"
+
+/ {
+    udmabuf@0x00 {
+        compatible = "ikwzm,u-dma-buf";
+        device-name = "udmabuf0";
+        minor-number = <0>;
+        size = <0x4000000>; // 64 MB
+        sync-mode = <1>;
+        sync-always;
+    };
+};
+
+3. Build and Deploy Rebuild the PetaLinux project to include the module. You can either build the entire system or just the module and root filesystem. 
+
+petalinux-build
+
+Upon booting the target, the module will instantiate the device node (e.g., /dev/udmabuf0), allowing user-space applications to map the DMA buffer via mmap. 
