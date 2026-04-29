@@ -11,6 +11,7 @@ module dma_sim_tb();
   logic [31:0] data_rd;
 
   logic clk;
+  logic clk_slow;
   logic resetn;
 
   task axi_write(input logic [31:0] addr, input logic [31:0] data);
@@ -55,8 +56,11 @@ module dma_sim_tb();
   end
   
   initial clk = 0;
+  initial clk_slow = 0;
   initial resetn=1;
   always #10 clk = ~clk; 
+  always #40 clk_slow = ~clk_slow; 
+
 
   logic [31:0] m_axi_awaddr  ;
   logic [2:0]  m_axi_awprot  ;
@@ -220,6 +224,53 @@ module dma_sim_tb();
    logic [4:0]    m_axis_mm2s_tid   ;
    logic [4:0]    m_axis_mm2s_tdest ;
 
+   logic [127:0]  m_wide_axis_mm2s_tdata ;
+   logic [15:0]   m_wide_axis_mm2s_tkeep ;
+   logic          m_wide_axis_mm2s_tvalid;
+   logic          m_wide_axis_mm2s_tready;
+   logic          m_wide_axis_mm2s_tlast ;
+   logic [3:0]    m_wide_axis_mm2s_tuser ;
+   logic [4:0]    m_wide_axis_mm2s_tid   ;
+   logic [4:0]    m_wide_axis_mm2s_tdest ;
+
+   logic [127:0]  m_wide_slow_axis_mm2s_tdata ;
+   logic [15:0]   m_wide_slow_axis_mm2s_tkeep ;
+   logic          m_wide_slow_axis_mm2s_tvalid;
+   logic          m_wide_slow_axis_mm2s_tready;
+   logic          m_wide_slow_axis_mm2s_tlast ;
+   logic [3:0]    m_wide_slow_axis_mm2s_tuser ;
+   logic [4:0]    m_wide_slow_axis_mm2s_tid   ;
+   logic [4:0]    m_wide_slow_axis_mm2s_tdest ;
+
+   logic [127:0]  s_wide_slow_axis_s2mm_tdata ;
+   logic [15:0]   s_wide_slow_axis_s2mm_tkeep ;
+   logic          s_wide_slow_axis_s2mm_tvalid;
+   logic          s_wide_slow_axis_s2mm_tready;
+   logic          s_wide_slow_axis_s2mm_tlast ;
+   logic [3:0]    s_wide_slow_axis_s2mm_tuser ;
+   logic [4:0]    s_wide_slow_axis_s2mm_tid   ;
+   logic [4:0]    s_wide_slow_axis_s2mm_tdest ;
+
+   logic [127:0]  s_wide_axis_s2mm_tdata ;
+   logic [15:0]   s_wide_axis_s2mm_tkeep ;
+   logic          s_wide_axis_s2mm_tvalid;
+   logic          s_wide_axis_s2mm_tready;
+   logic          s_wide_axis_s2mm_tlast ;
+   logic [3:0]    s_wide_axis_s2mm_tuser ;
+   logic [4:0]    s_wide_axis_s2mm_tid   ;
+   logic [4:0]    s_wide_axis_s2mm_tdest ;
+
+   // Replace this loobpack logic with the crypto core
+   assign s_wide_slow_axis_s2mm_tdata  = m_wide_slow_axis_mm2s_tdata ;
+   assign s_wide_slow_axis_s2mm_tkeep  = m_wide_slow_axis_mm2s_tkeep ;
+   assign s_wide_slow_axis_s2mm_tvalid = m_wide_slow_axis_mm2s_tvalid;
+   assign s_wide_slow_axis_s2mm_tlast  = m_wide_slow_axis_mm2s_tlast ;
+   assign s_wide_slow_axis_s2mm_tuser  = m_wide_slow_axis_mm2s_tuser ;
+   assign s_wide_slow_axis_s2mm_tid    = m_wide_slow_axis_mm2s_tid   ;
+   assign s_wide_slow_axis_s2mm_tdest  = m_wide_slow_axis_mm2s_tdest ;
+   assign m_wide_slow_axis_mm2s_tready = s_wide_slow_axis_s2mm_tready;
+
+
    logic [31:0]   s_axis_s2mm_tdata ;
    logic [3:0]    s_axis_s2mm_tkeep ;
    logic          s_axis_s2mm_tvalid; 
@@ -229,12 +280,8 @@ module dma_sim_tb();
    logic [4:0]    s_axis_s2mm_tid   ;
    logic [4:0]    s_axis_s2mm_tdest ;
 
-   assign s_axis_s2mm_tdata  = m_axis_mm2s_tdata;
-   assign s_axis_s2mm_tkeep  = m_axis_mm2s_tkeep;
-   assign s_axis_s2mm_tvalid = m_axis_mm2s_tvalid;
-   assign s_axis_s2mm_tlast  = m_axis_mm2s_tlast;
-   assign m_axis_mm2s_tready = s_axis_s2mm_tready;
-   
+/*
+
     axis_padder upadder(
     .aclk(clk          ),
     .aresetn(resetn    ),
@@ -251,6 +298,7 @@ module dma_sim_tb();
     .m_axis_tready(s_axis_s2mm_tready),
     .m_axis_tlast(s_axis_s2mm_tlast)
      );
+*/
            
   axi_dma_0 u_dma (
     .s_axi_lite_aclk     (clk          ),
@@ -381,6 +429,69 @@ module dma_sim_tb();
     //.m_axi_sg_rvalid         (),
     //.m_axi_sg_rready         ('0)
     );           
+
+  axis_dwidth_converter_0 conv_32_128 (
+    .aclk            (clk                    ),
+    .aresetn         (resetn                 ),
+    .s_axis_tvalid   (m_axis_mm2s_tvalid     ),
+    .s_axis_tready   (m_axis_mm2s_tready     ),
+    .s_axis_tdata    (m_axis_mm2s_tdata      ),
+    .s_axis_tkeep    (m_axis_mm2s_tkeep      ),
+    .s_axis_tlast    (m_axis_mm2s_tlast      ),
+    .m_axis_tvalid   (m_wide_axis_mm2s_tvalid),
+    .m_axis_tready   (m_wide_axis_mm2s_tready),
+    .m_axis_tdata    (m_wide_axis_mm2s_tdata ),
+    .m_axis_tkeep    (m_wide_axis_mm2s_tkeep ),
+    .m_axis_tlast    (m_wide_axis_mm2s_tlast )
+  );
+
+   axis_data_fifo_0 u_axis128_cross (
+     .s_axis_aresetn (resetn                      ),
+     .s_axis_aclk    (clk                         ),
+     .s_axis_tvalid  (m_wide_axis_mm2s_tvalid     ),
+     .s_axis_tready  (m_wide_axis_mm2s_tready     ),
+     .s_axis_tdata   (m_wide_axis_mm2s_tdata      ),
+     .s_axis_tkeep   (m_wide_axis_mm2s_tkeep      ),
+     .s_axis_tlast   (m_wide_axis_mm2s_tlast      ),
+     .m_axis_aclk    (clk_slow                    ),
+     .m_axis_tvalid  (m_wide_slow_axis_mm2s_tvalid),
+     .m_axis_tready  (m_wide_slow_axis_mm2s_tready),
+     .m_axis_tdata   (m_wide_slow_axis_mm2s_tdata ),
+     .m_axis_tkeep   (m_wide_slow_axis_mm2s_tkeep ),
+     .m_axis_tlast   (m_wide_slow_axis_mm2s_tlast )
+   );
+
+   axis_data_fifo_0 u_axis128_cross_back (
+     .s_axis_aresetn (resetn                      ),
+     .s_axis_aclk    (clk_slow                    ),
+     .s_axis_tvalid  (s_wide_slow_axis_s2mm_tvalid),
+     .s_axis_tready  (s_wide_slow_axis_s2mm_tready),
+     .s_axis_tdata   (s_wide_slow_axis_s2mm_tdata ),
+     .s_axis_tkeep   (s_wide_slow_axis_s2mm_tkeep ),
+     .s_axis_tlast   (s_wide_slow_axis_s2mm_tlast ),
+     .m_axis_aclk    (clk                         ),
+     .m_axis_tvalid  (s_wide_axis_s2mm_tvalid     ),
+     .m_axis_tready  (s_wide_axis_s2mm_tready     ),
+     .m_axis_tdata   (s_wide_axis_s2mm_tdata      ),
+     .m_axis_tkeep   (s_wide_axis_s2mm_tkeep      ),
+     .m_axis_tlast   (s_wide_axis_s2mm_tlast      )
+   );
+
+   axis_dwidth_converter_1 conv_128_32(
+     .aclk          (clk                    ),
+     .aresetn       (resetn                 ),
+     .s_axis_tvalid (s_wide_axis_s2mm_tvalid),
+     .s_axis_tready (s_wide_axis_s2mm_tready),
+     .s_axis_tdata  (s_wide_axis_s2mm_tdata ),
+     .s_axis_tkeep  (s_wide_axis_s2mm_tkeep ),
+     .s_axis_tlast  (s_wide_axis_s2mm_tlast ),
+     .m_axis_tvalid (s_axis_s2mm_tvalid     ),
+     .m_axis_tready (s_axis_s2mm_tready     ),
+     .m_axis_tdata  (s_axis_s2mm_tdata      ),
+     .m_axis_tkeep  (s_axis_s2mm_tkeep      ),
+     .m_axis_tlast  (s_axis_s2mm_tlast      )
+   );
+
 
   blk_mem_gen_0 bram_a (
     .rsta_busy     (                    ),         
