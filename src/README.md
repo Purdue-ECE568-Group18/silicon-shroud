@@ -28,3 +28,5 @@
 - The loopback is for if you run the client side first before the server, 
 - Its good practice to run the server first
 
+## Copy to the Board
+scp pong_server petalinux@192.168.1.10:/home/petalinux/silicon-shroud/src/
