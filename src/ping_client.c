@@ -7,7 +7,7 @@
 
 #define BUF_SIZE 1500
 #define PONG_PORT 6000
-#define BOARD_IP "192.168.1.10"
+#define BOARD_IP "192.168.0.10"
 
 int main() {
     int sock;

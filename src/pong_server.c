@@ -6,7 +6,7 @@
 
 #define BUF_SIZE 1500  // Corrected to 1500
 #define PONG_PORT 6000
-#define BOARD_IP "192.168.1.10" // Board IP
+#define BOARD_IP "192.168.0.10" // Board IP
 
 void error_handling(char *message) {
     perror(message);
