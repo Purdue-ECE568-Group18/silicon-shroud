@@ -52,7 +52,7 @@ int main() {
     }
     // Get pointer to the physical buffer
     buf = mmap(NULL, buf_size, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
-    buf2 = buf+0x400;
+    buf2 = buf+0x1000;
 
     // 1. Open /dev/mem
     if ((fd2 = open("/dev/mem", O_RDWR | O_SYNC)) < 0) {
@@ -100,12 +100,15 @@ int main() {
         *(volatile unsigned int*)((char*)virt_addr+MM2S_CTRL)    = 0x00007001;
         *(volatile unsigned int*)((char*)virt_addr+MM2S_SA_LWR)  = (unsigned int) phys_addr;
         *(volatile unsigned int*)((char*)virt_addr+MM2S_SA_UPR)  = 0x00000000;
-        *(volatile unsigned int*)((char*)virt_addr+MM2S_LEN)     = 0x00001000;
         *(volatile unsigned int*)((char*)virt_addr+S2MM_CTRL)    = 0x00000001;
         *(volatile unsigned int*)((char*)virt_addr+S2MM_DA_LWR)  = (unsigned int) phys_addr+0x1000;
         *(volatile unsigned int*)((char*)virt_addr+S2MM_DA_UPR)  = 0x00000000;
-        *(volatile unsigned int*)((char*)virt_addr+S2MM_LEN)     = 0x00001000;
-        // This is where the polling comes in, hopefully this doesnt screw us 
+        
+	// Use the actual packet size for the DMA transfer
+	*(volatile unsigned int*)((char*)virt_addr+MM2S_LEN) = (unsigned int)str_len;
+	*(volatile unsigned int*)((char*)virt_addr+S2MM_LEN) = (unsigned int)str_len;	
+	
+	// This is where the polling comes in, hopefully this doesnt screw us 
         volatile unsigned int return_val=0;
         while(!( (return_val >> 1) & 1))
         {
