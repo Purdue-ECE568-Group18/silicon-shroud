@@ -36,7 +36,7 @@ int main() {
         printf("Packet round-trip delta: %.2f us\n", dt);
         
         last_time = current_time;
-        usleep(50000); // 50ms sleep
+        usleep(2000); // 50ms sleep
     }
     close(sock);
     return 0;
