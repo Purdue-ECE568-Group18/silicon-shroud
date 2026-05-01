@@ -30,3 +30,8 @@
 
 ## Copy to the Board
 scp pong_server petalinux@192.168.1.10:/home/petalinux/silicon-shroud/src/
+
+## Streaming the Video
+- compile the ping_client_ffmpeg code using gcc on the host side
+- Put the run this below
+    - cat stream720p.ts | ./ping_client_ffmpeg | mpv --cache=yes --demuxer-lavf-format=mpegts -
