@@ -52,7 +52,7 @@ int main() {
     }
     // Get pointer to the physical buffer
     buf = mmap(NULL, buf_size, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
-    buf2 = buf+0x400;
+    buf2 = buf+0x1000;
 
     // 1. Open /dev/mem
     if ((fd2 = open("/dev/mem", O_RDWR | O_SYNC)) < 0) {
