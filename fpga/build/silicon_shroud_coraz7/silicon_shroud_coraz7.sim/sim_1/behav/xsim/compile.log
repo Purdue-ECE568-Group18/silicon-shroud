@@ -1,0 +1,102 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_processing_system7_0_0/sim/coraz7_zynq_ps_processing_system7_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps_processing_system7_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_clk_wiz_0_0/coraz7_zynq_ps_clk_wiz_0_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps_clk_wiz_0_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_clk_wiz_0_0/coraz7_zynq_ps_clk_wiz_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps_clk_wiz_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_util_vector_logic_0_0/sim/coraz7_zynq_ps_util_vector_logic_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps_util_vector_logic_0_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_2/sim/bd_c428_s00mmu_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_s00mmu_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_3/sim/bd_c428_s00tr_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_s00tr_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_4/sim/bd_c428_s00sic_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_s00sic_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_5/sim/bd_c428_s00a2s_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_s00a2s_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_6/sim/bd_c428_sarn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_sarn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_7/sim/bd_c428_srn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_srn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_8/sim/bd_c428_sawn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_sawn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_9/sim/bd_c428_swn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_swn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_10/sim/bd_c428_sbn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_sbn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_11/sim/bd_c428_m00s2a_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_m00s2a_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_12/sim/bd_c428_m00e_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428_m00e_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/sim/bd_c428.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_c428
+INFO: [VRFC 10-311] analyzing module clk_map_imp_1RBC56C
+INFO: [VRFC 10-311] analyzing module m00_exit_pipeline_imp_7XX2I7
+INFO: [VRFC 10-311] analyzing module s00_entry_pipeline_imp_18BBB3G
+INFO: [VRFC 10-311] analyzing module s00_nodes_imp_12B1MGM
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/sim/coraz7_zynq_ps_smartconnect_0_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps_smartconnect_0_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_2/sim/bd_0479_s00mmu_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479_s00mmu_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_3/sim/bd_0479_s00tr_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479_s00tr_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_4/sim/bd_0479_s00sic_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479_s00sic_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_5/sim/bd_0479_s00a2s_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479_s00a2s_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_6/sim/bd_0479_sarn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479_sarn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_7/sim/bd_0479_srn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479_srn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_8/sim/bd_0479_m00s2a_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479_m00s2a_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_9/sim/bd_0479_m00e_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479_m00e_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/sim/bd_0479.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0479
+INFO: [VRFC 10-311] analyzing module clk_map_imp_FJ2RVV
+INFO: [VRFC 10-311] analyzing module m00_exit_pipeline_imp_1LJ31WW
+INFO: [VRFC 10-311] analyzing module s00_entry_pipeline_imp_L82HYR
+INFO: [VRFC 10-311] analyzing module s00_nodes_imp_OWRGX5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/sim/coraz7_zynq_ps_smartconnect_1_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps_smartconnect_1_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_2/sim/bd_0489_s00mmu_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_s00mmu_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_3/sim/bd_0489_s00tr_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_s00tr_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_4/sim/bd_0489_s00sic_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_s00sic_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_5/sim/bd_0489_s00a2s_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_s00a2s_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_6/sim/bd_0489_sawn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_sawn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_7/sim/bd_0489_swn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_swn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_8/sim/bd_0489_sbn_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_sbn_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_9/sim/bd_0489_m00s2a_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_m00s2a_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_10/sim/bd_0489_m00e_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489_m00e_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/sim/bd_0489.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0489
+INFO: [VRFC 10-311] analyzing module clk_map_imp_1CXS76S
+INFO: [VRFC 10-311] analyzing module m00_exit_pipeline_imp_K7AKZJ
+INFO: [VRFC 10-311] analyzing module s00_entry_pipeline_imp_1KKP67W
+INFO: [VRFC 10-311] analyzing module s00_nodes_imp_1PP7ELI
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/sim/coraz7_zynq_ps_smartconnect_2_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps_smartconnect_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/sim/coraz7_zynq_ps.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/bd/coraz7_zynq_ps/hdl/coraz7_zynq_ps_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module coraz7_zynq_ps_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_axi_dma_0_0_1/sim/coraz7_zynq_ps_axi_dma_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'coraz7_zynq_ps_axi_dma_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_1/sim/bd_c428_psr_aclk_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'bd_c428_psr_aclk_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_1/sim/bd_0479_psr_aclk_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'bd_0479_psr_aclk_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_1/sim/bd_0489_psr_aclk_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'bd_0489_psr_aclk_0'

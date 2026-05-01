@@ -1332,8 +1332,8 @@
       "axi_dma_0": {
         "vlnv": "xilinx.com:ip:axi_dma:7.1",
         "ip_revision": "37",
-        "xci_name": "coraz7_zynq_ps_axi_dma_0_1",
-        "xci_path": "ip/coraz7_zynq_ps_axi_dma_0_1/coraz7_zynq_ps_axi_dma_0_1.xci",
+        "xci_name": "coraz7_zynq_ps_axi_dma_0_0",
+        "xci_path": "ip/coraz7_zynq_ps_axi_dma_0_0_1/coraz7_zynq_ps_axi_dma_0_0.xci",
         "inst_hier_path": "axi_dma_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -1391,8 +1391,8 @@
       "smartconnect_0": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "ip_revision": "28",
-        "xci_name": "coraz7_zynq_ps_smartconnect_0_1",
-        "xci_path": "ip/coraz7_zynq_ps_smartconnect_0_1/coraz7_zynq_ps_smartconnect_0_1.xci",
+        "xci_name": "coraz7_zynq_ps_smartconnect_0_0",
+        "xci_path": "ip/coraz7_zynq_ps_smartconnect_0_0_1/coraz7_zynq_ps_smartconnect_0_0.xci",
         "inst_hier_path": "smartconnect_0",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -1463,8 +1463,8 @@
       "smartconnect_1": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "ip_revision": "28",
-        "xci_name": "coraz7_zynq_ps_smartconnect_1_1",
-        "xci_path": "ip/coraz7_zynq_ps_smartconnect_1_1/coraz7_zynq_ps_smartconnect_1_1.xci",
+        "xci_name": "coraz7_zynq_ps_smartconnect_1_0",
+        "xci_path": "ip/coraz7_zynq_ps_smartconnect_1_0_1/coraz7_zynq_ps_smartconnect_1_0.xci",
         "inst_hier_path": "smartconnect_1",
         "has_run_ip_tcl": "true",
         "parameters": {
@@ -1541,8 +1541,8 @@
       "smartconnect_2": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "ip_revision": "28",
-        "xci_name": "coraz7_zynq_ps_smartconnect_2_1",
-        "xci_path": "ip/coraz7_zynq_ps_smartconnect_2_1/coraz7_zynq_ps_smartconnect_2_1.xci",
+        "xci_name": "coraz7_zynq_ps_smartconnect_2_0",
+        "xci_path": "ip/coraz7_zynq_ps_smartconnect_2_0_1/coraz7_zynq_ps_smartconnect_2_0.xci",
         "inst_hier_path": "smartconnect_2",
         "has_run_ip_tcl": "true",
         "parameters": {

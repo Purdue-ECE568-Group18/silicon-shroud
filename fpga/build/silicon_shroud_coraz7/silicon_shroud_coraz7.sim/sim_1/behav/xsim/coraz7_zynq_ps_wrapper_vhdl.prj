@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_axi_dma_0_0_1/sim/coraz7_zynq_ps_axi_dma_0_0.vhd" \
+"../../../../silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_0_0_1/bd_0/ip/ip_1/sim/bd_c428_psr_aclk_0.vhd" \
+"../../../../silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_1_0_1/bd_0/ip/ip_1/sim/bd_0479_psr_aclk_0.vhd" \
+"../../../../silicon_shroud_coraz7.ip_user_files/bd/coraz7_zynq_ps/ip/coraz7_zynq_ps_smartconnect_2_0_1/bd_0/ip/ip_1/sim/bd_0489_psr_aclk_0.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Apr 27 23:09:47 2026
+# Process ID         : 525584
+# Current directory  : /home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7
+# Command line       : vivado
+# Log file           : /home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/vivado.log
+# Journal file       : /home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/vivado.jou
+# Running On         : luke-moy-ubuntu
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 7 6800H with Radeon Graphics
+# CPU Frequency      : 2662.508 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 32891 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 41481 MB
+# Available Virtual  : 32137 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/luke-moy/Git_Repos/silicon-shroud/fpga/build/silicon_shroud_coraz7/silicon_shroud_coraz7.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/luke-moy/Git_Repos/silicon-shroud/fpga/bd/coraz7_zynq_ps/coraz7_zynq_ps.bd}
+startgroup
+create_bd_cell -type ip -vlnv silicon_shroud:user:aes_stream_engine:1.0 aes_stream_engine_0
+endgroup
+set_property location {4 1209 603} [get_bd_cells aes_stream_engine_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/aes_stream_engine_0/s_axi} ddr_seg {Auto} intc_ip {/smartconnect_0} master_apm {0}}  [get_bd_intf_pins aes_stream_engine_0/s_axi]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins aes_stream_engine_0/s_axi_aclk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins aes_stream_engine_0/s_axis_aclk]
+connect_bd_net [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins aes_stream_engine_0/m_axis_aclk]
+get_bd_nets -of_objects [get_bd_pins axi_dma_0/axi_resetn]
+connect_bd_net [get_bd_nets /processing_system7_0_FCLK_RESET0_N] [get_bd_pins aes_stream_engine_0/s_axi_aresetn]
+connect_bd_intf_net [get_bd_intf_pins aes_stream_engine_0/m_axis] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]

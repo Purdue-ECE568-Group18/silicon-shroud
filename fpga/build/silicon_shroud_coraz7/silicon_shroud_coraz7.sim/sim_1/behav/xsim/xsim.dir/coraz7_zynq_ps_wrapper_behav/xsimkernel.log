@@ -1,0 +1,7 @@
+Running: xsim.dir/coraz7_zynq_ps_wrapper_behav/xsimk -simmode gui -wdb coraz7_zynq_ps_wrapper_behav.wdb -simrunnum 0 -socket 54653
+Design successfully loaded
+Design Loading Memory Usage: 235664 KB (Peak: 235796 KB)
+Design Loading CPU Usage: 830 ms
+Simulation completed
+Simulation Memory Usage: 339184 KB (Peak: 374932 KB)
+Simulation CPU Usage: 880 ms
