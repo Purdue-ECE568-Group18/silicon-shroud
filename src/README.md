@@ -18,9 +18,6 @@
 ## Run if you did this already but have a hanging ssh key
 - ssh-keygen -f '/home/zachebert/.ssh/known_hosts' -R '192.168.0.10'
 
-## Will need to install the ARM Compiler for it since gcc isnt available on petalinux
-- arm-linux-gnueabihf-gcc -o pong_server pong_server.c -static
-
 ## run the command below on the client side, and then run the executable
 - gcc -o ping_client ping_client.c
 
