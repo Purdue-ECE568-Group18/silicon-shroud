@@ -18,6 +18,12 @@ module dma_sim_tb();
     agent.AXI4LITE_WRITE_BURST(addr, '0, data, resp);  
   endtask
 
+  task axi_read(input logic [31:0] addr, input logic [31:0] data);
+    agent.AXI4LITE_READ_BURST(addr, 0, data, resp);
+  endtask
+        
+  logic [31:0] dummy;
+
   initial begin
     agent = new("my VIP agent", u_axi_lite_driver.inst.IF);
     agent.set_agent_tag("Master VIP");
@@ -53,6 +59,10 @@ module dma_sim_tb();
     // A non-zero value causes a write on the S2MM AXI4 interface of the number of bytes 
     // received on the S2MM AXI4-Stream interface.   
     axi_write(32'h00000058, 32'h00001000); 
+    #20
+    axi_write(32'h00010000, 32'habcdef12);
+    #20
+    axi_read(32'h00010000, dummy);    
   end
   
   initial clk = 0;
@@ -190,6 +200,47 @@ module dma_sim_tb();
   logic        bram_b_s_axi_rlast  ;
   logic        bram_b_s_axi_rvalid ;
   logic        bram_b_s_axi_rready ;
+
+  logic [31:0] aes_axil_araddr     ;
+  logic [2:0]  aes_axil_arprot     ;
+  logic        aes_axil_arready    ;
+  logic        aes_axil_arvalid    ;
+  logic [31:0] aes_axil_awaddr     ;
+  logic [2:0]  aes_axil_awprot     ;
+  logic        aes_axil_awready    ;
+  logic        aes_axil_awvalid    ;
+  logic        aes_axil_bready     ;
+  logic[1:0]   aes_axil_bresp      ;
+  logic        aes_axil_bvalid     ;
+  logic[31:0]  aes_axil_rdata      ;
+  logic        aes_axil_rready     ;
+  logic[1:0]   aes_axil_rresp      ;
+  logic        aes_axil_rvalid     ;
+  logic [31:0] aes_axil_wdata      ;
+  logic        aes_axil_wready     ;
+  logic [3:0]  aes_axil_wstrb      ;
+  logic        aes_axil_wvalid     ;
+
+  logic [31:0] dma_axi_awaddr  ;
+  logic [2:0]  dma_axi_awprot  ;
+  logic        dma_axi_awvalid ;
+  logic        dma_axi_awready ;
+  logic [31:0] dma_axi_wdata   ;
+  logic [3:0]  dma_axi_wstrb   ;
+  logic        dma_axi_wvalid  ;
+  logic        dma_axi_wready  ;
+  logic [1:0]  dma_axi_bresp   ;
+  logic        dma_axi_bvalid  ;
+  logic        dma_axi_bready  ;
+  logic [31:0] dma_axi_araddr  ;
+  logic [2:0]  dma_axi_arprot  ;
+  logic        dma_axi_arvalid ;
+  logic        dma_axi_arready ;
+  logic [31:0] dma_axi_rdata   ;
+  logic [1:0]  dma_axi_rresp   ;
+  logic        dma_axi_rvalid  ;
+  logic        dma_axi_rready  ;  
+
   
   axi_vip_0 u_axi_lite_driver (
     .aclk            (clk           ),
@@ -299,6 +350,46 @@ module dma_sim_tb();
     .m_axis_tlast(s_axis_s2mm_tlast)
      );
 */
+
+
+aes_axi_stream_wrapper #(
+    .C_S_AXI_DATA_WIDTH (32),
+    .C_S_AXI_ADDR_WIDTH (6 )
+) DUT (
+  .s_axi_aclk       (clk             ),
+  .s_axi_aresetn    (resetn          ),
+  
+  .s_axi_awaddr     (aes_axil_awaddr ),
+  .s_axi_awvalid    (aes_axil_awvalid),
+  .s_axi_awready    (aes_axil_awready),
+  .s_axi_wdata      (aes_axil_wdata  ),
+  .s_axi_wvalid     (aes_axil_wvalid ),
+  .s_axi_wready     (aes_axil_wready ),
+  .s_axi_bresp      (aes_axil_bresp  ),
+  .s_axi_bvalid     (aes_axil_bvalid ),
+  .s_axi_bready     (aes_axil_bready ),
+  .s_axi_araddr     (aes_axil_araddr ),
+  .s_axi_arvalid    (aes_axil_arvalid),
+  .s_axi_arready    (aes_axil_arready),
+  .s_axi_rdata      (aes_axil_rdata  ),
+  .s_axi_rresp      (aes_axil_rresp  ),
+  .s_axi_rvalid     (aes_axil_rvalid ),
+  .s_axi_rready     (aes_axil_rready ),
+                    
+  .s_axis_aclk      (clk_slow),
+  .s_axis_aresetn   (resetn  ),
+  .s_axis_tdata     (),
+  .s_axis_tvalid    (),
+  .s_axis_tready    (),
+  .s_axis_tlast     (),
+                    
+  .m_axis_aclk      (clk_slow),
+  .m_axis_aresetn   (resetn  ),
+  .m_axis_tdata     (),
+  .m_axis_tvalid    (),
+  .m_axis_tready    (),
+  .m_axis_tlast     ()
+);
            
   axi_dma_0 u_dma (
     .s_axi_lite_aclk     (clk          ),
@@ -306,23 +397,23 @@ module dma_sim_tb();
     .m_axi_s2mm_aclk     (clk          ),
     .axi_resetn          (resetn       ),
     
-    .s_axi_lite_awvalid  (m_axi_awvalid),
-    .s_axi_lite_awready  (m_axi_awready),
-    .s_axi_lite_awaddr   (m_axi_awaddr [9:0]),
-    .s_axi_lite_wvalid   (m_axi_wvalid ),
-    .s_axi_lite_wready   (m_axi_wready ),
-    .s_axi_lite_wdata    (m_axi_wdata  ),
-    .s_axi_lite_bresp    (m_axi_bresp  ),
-    .s_axi_lite_bvalid   (m_axi_bvalid ),
-    .s_axi_lite_bready   (m_axi_bready ),
-    .s_axi_lite_arvalid  (m_axi_arvalid),
-    .s_axi_lite_arready  (m_axi_arready),
-    .s_axi_lite_araddr   (m_axi_araddr [9:0]),
-    .s_axi_lite_rvalid   (m_axi_rvalid ),
-    .s_axi_lite_rready   (m_axi_rready ),
-    .s_axi_lite_rdata    (m_axi_rdata  ),
-    .s_axi_lite_rresp    (m_axi_rresp  ),
-    
+    .s_axi_lite_awvalid  (dma_axi_awvalid     ),
+    .s_axi_lite_awready  (dma_axi_awready     ),
+    .s_axi_lite_awaddr   (dma_axi_awaddr [9:0]),
+    .s_axi_lite_wvalid   (dma_axi_wvalid      ),
+    .s_axi_lite_wready   (dma_axi_wready      ),
+    .s_axi_lite_wdata    (dma_axi_wdata       ),
+    .s_axi_lite_bresp    (dma_axi_bresp       ),
+    .s_axi_lite_bvalid   (dma_axi_bvalid      ),
+    .s_axi_lite_bready   (dma_axi_bready      ),
+    .s_axi_lite_arvalid  (dma_axi_arvalid     ),
+    .s_axi_lite_arready  (dma_axi_arready     ),
+    .s_axi_lite_araddr   (dma_axi_araddr [9:0]),
+    .s_axi_lite_rvalid   (dma_axi_rvalid      ),
+    .s_axi_lite_rready   (dma_axi_rready      ),
+    .s_axi_lite_rdata    (dma_axi_rdata       ),
+    .s_axi_lite_rresp    (dma_axi_rresp       ),
+                          
     /* Read AXI Port, only read signals */
     .m_axi_mm2s_araddr      (m_axi_mm2s_araddr ),
     .m_axi_mm2s_arlen       (m_axi_mm2s_arlen  ),
@@ -704,8 +795,73 @@ module dma_sim_tb();
     .S2MM_AXI_wlast   (m_axi_s2mm_wlast      ),
     .S2MM_AXI_wready  (m_axi_s2mm_wready     ),
     .S2MM_AXI_wstrb   (m_axi_s2mm_wstrb      ),
-    .S2MM_AXI_wvalid  (m_axi_s2mm_wvalid     )
+    .S2MM_AXI_wvalid  (m_axi_s2mm_wvalid     ),
+    
+    .regs_axil_araddr  (m_axi_araddr         ),
+    .regs_axil_arprot  ('0                   ),
+    .regs_axil_arready (m_axi_arready        ),
+    .regs_axil_arvalid (m_axi_arvalid        ),
+    .regs_axil_awaddr  (m_axi_awaddr         ),
+    .regs_axil_awprot  ('0                   ),
+    .regs_axil_awready (m_axi_awready        ),
+    .regs_axil_awvalid (m_axi_awvalid        ),
+    .regs_axil_bready  (m_axi_bready         ),
+    .regs_axil_bresp   (m_axi_bresp          ),
+    .regs_axil_bvalid  (m_axi_bvalid         ),
+    .regs_axil_rdata   (m_axi_rdata          ),
+    .regs_axil_rready  (m_axi_rready         ),
+    .regs_axil_rresp   (m_axi_rresp          ),
+    .regs_axil_rvalid  (m_axi_rvalid         ),
+    .regs_axil_wdata   (m_axi_wdata          ),
+    .regs_axil_wready  (m_axi_wready         ),
+    .regs_axil_wstrb   (m_axi_wstrb          ),
+    .regs_axil_wvalid  (m_axi_wvalid         ),  
+
+    .aes_axil_araddr   (aes_axil_araddr  ),
+    .aes_axil_arprot   (aes_axil_arprot  ),
+    .aes_axil_arready  (aes_axil_arready ),
+    .aes_axil_arvalid  (aes_axil_arvalid ),
+    .aes_axil_awaddr   (aes_axil_awaddr  ),
+    .aes_axil_awprot   (aes_axil_awprot  ),
+    .aes_axil_awready  (aes_axil_awready ),
+    .aes_axil_awvalid  (aes_axil_awvalid ),
+    .aes_axil_bready   (aes_axil_bready  ),
+    .aes_axil_bresp    (aes_axil_bresp   ),
+    .aes_axil_bvalid   (aes_axil_bvalid  ),
+    .aes_axil_rdata    (aes_axil_rdata   ),
+    .aes_axil_rready   (aes_axil_rready  ),
+    .aes_axil_rresp    (aes_axil_rresp   ),
+    .aes_axil_rvalid   (aes_axil_rvalid  ),
+    .aes_axil_wdata    (aes_axil_wdata   ),
+    .aes_axil_wready   (aes_axil_wready  ),
+    .aes_axil_wstrb    (aes_axil_wstrb   ),
+    .aes_axil_wvalid   (aes_axil_wvalid  ),
+                       
+    .dma_axil_araddr   (dma_axi_araddr ),
+    .dma_axil_arprot   (dma_axi_arprot ),
+    .dma_axil_arready  (dma_axi_arready),
+    .dma_axil_arvalid  (dma_axi_arvalid),
+    .dma_axil_awaddr   (dma_axi_awaddr ),
+    .dma_axil_awprot   (dma_axi_awprot ),
+    .dma_axil_awready  (dma_axi_awready),
+    .dma_axil_awvalid  (dma_axi_awvalid),
+    .dma_axil_bready   (dma_axi_bready ),
+    .dma_axil_bresp    (dma_axi_bresp  ),
+    .dma_axil_bvalid   (dma_axi_bvalid ),
+    .dma_axil_rdata    (dma_axi_rdata  ),
+    .dma_axil_rready   (dma_axi_rready ),
+    .dma_axil_rresp    (dma_axi_rresp  ),
+    .dma_axil_rvalid   (dma_axi_rvalid ),
+    .dma_axil_wdata    (dma_axi_wdata  ),
+    .dma_axil_wready   (dma_axi_wready ),
+    .dma_axil_wstrb    (dma_axi_wstrb  ),
+    .dma_axil_wvalid   (dma_axi_wvalid )
   );
 
+
+
+             
+             
+             
                         
 endmodule
