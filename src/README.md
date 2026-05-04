@@ -2,36 +2,37 @@
 ## Access the Cora Z7 terminal via Minicom:
 - sudo minicom -D /dev/ttyUSB1 -b 115200
 
-## Find Ethernet Port
+## Find and Setting the Ethernet Port
 - ip link show (Ex: enx000a35001e53)
 
-## Bring the interface down
+### Bring the interface down
 - sudo ifconfig enx000a35001e53 down
 
-## Assign the IP, it has to be the same as the host Ip except the last number
+### Assign the IP, it has to be the same as the host Ip except the last number
 - sudo ifconfig enx000a35001e53 192.168.0.10 netmask 255.255.255.0 up
 
-## If you are just using a regular ethernet cord, its probably going to be eth0
+### If you are just using a regular ethernet cord, its probably going to be eth0
 - ifconfig enx000a35001e53
 
-## Run if you did this already but have a hanging ssh key
+### Run if you did this already but have a hanging ssh key on the host side
 - ssh-keygen -f '/home/zachebert/.ssh/known_hosts' -R '192.168.0.10'
 
-## run the command below on the client side, and then run the executable
+## Executions
+### run the command below on the client side, and then run the executable
 - gcc -o ping_client_cv ping_client_cv.c
 
-## run the command below on the server side, and then run the executable
+### run the command below on the server side, and then run the executable
 - arm-linux-gnueabihf-gcc -o pong_server pong_server.c -static
 
-## Notes
+### Notes
 - The loopback is for if you run the client side first before the server, 
 - Its good practice to run the server first
 
-## Copy to the Board
+### Copy to the Board
 - scp shroud_server petalinux@192.168.0.10:/home/petalinux/
 
 
-## Execution Flow
+## Code Workflow
 1) The shroud_server operates using a Double-Buffered DMA Pipeline to ensure memory safety and timing precision:
 
 2) RECV: recvfrom() receives a UDP payload into a source buffer slot.
