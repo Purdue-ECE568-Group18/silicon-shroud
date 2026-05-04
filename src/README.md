@@ -1,4 +1,3 @@
-## Go Into the Board
 ## Access the Cora Z7 terminal via Minicom:
 - sudo minicom -D /dev/ttyUSB1 -b 115200
 
