@@ -28,8 +28,6 @@ int main() {
         perror("Failed to open CSV file");
         exit(1);
     }
-    fprintf(csv_file, "Mean_Latency_us,StdDev_us,CV,Usleep_Val\n");
-
     sock = socket(PF_INET, SOCK_DGRAM, 0);
     memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
@@ -40,16 +38,27 @@ int main() {
     tv.tv_sec = 0;
     tv.tv_usec = 100000; 
     setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
+    // NEW: Tracking for Loss and Bitrate
+    int packets_sent = 0;
+    int packets_received_window = 0;
+    long bytes_received_window = 0;
+    struct timeval window_start;
+    gettimeofday(&window_start, NULL);
 
+    // UPDATE: CSV Header
+    fprintf(csv_file, "Mean_Latency_us,StdDev_us,CV,Loss_Rate_Pct,Bitrate_Mbps,Usleep_Val\n");
     while(1) {
         size_t bytes_read = fread(buffer, 1, BUF_SIZE, stdin);
         if (bytes_read <= 0) break;
 
         gettimeofday(&start, NULL);
         sendto(sock, buffer, bytes_read, 0, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
+        packets_sent++; // NEW: Increment every time we send
         int received = recvfrom(sock, buffer, BUF_SIZE, 0, NULL, NULL);
 
         if (received > 0) {
+	    packets_received_window++; // NEW
+            bytes_received_window += received; // NEW
             gettimeofday(&end, NULL);
             double latency = (end.tv_sec - start.tv_sec) * 1000000.0 + (end.tv_usec - start.tv_usec);
             latencies[packet_idx++] = latency;
@@ -69,8 +78,26 @@ int main() {
                 double cv = (mean > 0) ? (std_dev / mean) : 0;
 
                 // 1. Export to CSV
-                fprintf(csv_file, "%.2f,%.2f,%.4f,%ld\n", mean, std_dev, cv, current_usleep);
+		// 1. NEW: Calculate Loss and Bitrate
+                struct timeval window_end;
+                gettimeofday(&window_end, NULL);
+                double elapsed = (window_end.tv_sec - window_start.tv_sec) + 
+                                 (window_end.tv_usec - window_start.tv_usec) / 1000000.0;
+
+                double loss_rate = (1.0 - ((double)packets_received_window / (double)packets_sent)) * 100.0;
+                double mbps = (bytes_received_window * 8.0) / (elapsed * 1000000.0);
+
+                // UPDATE: Export with new columns
+                fprintf(csv_file, "%.2f,%.2f,%.4f,%.2f,%.2f,%ld\n", 
+                        mean, std_dev, cv, loss_rate, mbps, current_usleep);
                 fflush(csv_file);
+
+                // NEW: Reset window trackers
+                packets_sent = 0;
+                packets_received_window = 0;
+                bytes_received_window = 0;
+                gettimeofday(&window_start, NULL);
+
 
                 // 2. Adjust usleep based on CV (Jitter Compensation)
                 // If CV is high (> 0.1), slow down slightly to stabilize the stream
@@ -79,7 +106,6 @@ int main() {
                 } else if (cv < 0.05 && current_usleep > 500) {
                     current_usleep -= 50;
                 }
-
                 packet_idx = 0;
             }
         }
