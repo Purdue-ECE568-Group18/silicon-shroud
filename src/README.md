@@ -55,11 +55,11 @@
 - sudo ./shroud_server --mode bypass --target-bytes 1500 --verbose
 
 ### Command Line Options
---mode <dma/bypass> -> Choose between Hardware DMA or Software path.
---target-bytes <N> -> The total size of every outgoing packet (default 1500).
---align-bytes <N> -> Padding alignment for AES readiness (default 16).
---no-pad / --no-chaff -> Disable specific security features.
---verbose -> Enable real-time telemetry and throughput prints.
+- --mode <dma/bypass> -> Choose between Hardware DMA or Software path.
+- --target-bytes <N> -> The total size of every outgoing packet (default 1500).
+- --align-bytes <N> -> Padding alignment for AES readiness (default 16).
+- --no-pad / --no-chaff -> Disable specific security features.
+- --verbose -> Enable real-time telemetry and throughput prints.
 
 ## Streaming the Video
 - compile the ping_client_ffmpeg code using gcc on the host side
@@ -67,7 +67,7 @@
     - cat stream720p.ts | ./ping_client_cv | mpv --cache=yes --demuxer-lavf-format=mpegts -
 
 ## View Logs
-    Can be found in the same directory called shroud_stats.csv
+- Can be found in the same directory called shroud_stats.csv
 
 ### Clean Exits
 The server and client includes Signal Resilience. 
