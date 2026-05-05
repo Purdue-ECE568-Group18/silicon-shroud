@@ -1,3 +1,9 @@
+# Project Description
+The Silicon Shroud is a hardware-accelerated security layer designed to protect network communications from traffic analysis and metadata leakage. 
+By integrating AES encryption with high-precision traffic shaping on a Cora Z7 FPGA, the system flattens the "network heartbeat" and masks packet sizes through a combination of 16-byte alignment and LFSR-generated chaff.
+This ensures that an external observer sees only a constant, high-entropy 5 Mbps stream, effectively concealing the true nature and timing of the underlying data.
+
+# Project Setup
 ## Access the Cora Z7 terminal via Minicom:
 - sudo minicom -D /dev/ttyUSB1 -b 115200
 
